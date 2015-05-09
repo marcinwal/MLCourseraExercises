@@ -20,8 +20,8 @@ for iter = 1:num_iters
 
     % x = X(:,2:dim);
     
-    h = theta' * X';
-    theta = theta - alpha *(1/m)* sum((h-y)*X);
+    h = X * theta;
+    theta -= alpha *(1/m)*(X'*(h-y));
     fprintf("%f \n %f ",theta,h);
 
 
